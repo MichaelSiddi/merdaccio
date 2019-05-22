@@ -23,7 +23,7 @@ const json = {
       },
       "license": "ISC",
       "dependencies": {
-        "verdaccio": "^2.7.2"
+        "merdaccio": "^2.7.2"
       },
       "readme": "# test",
       "readmeFilename": "README.md",

@@ -372,7 +372,7 @@ describe('endpoint unit test', () => {
       test('should not found a unexisting remote package under scope', (done) => {
 
         request(app)
-          .get('/@verdaccio/not-found')
+          .get('/@merdaccio/not-found')
           .set(HEADER_TYPE.CONTENT_TYPE, HEADERS.JSON_CHARSET)
           .expect(HEADER_TYPE.CONTENT_TYPE, HEADERS.JSON_CHARSET)
           .expect(HTTP_STATUS.NOT_FOUND)
@@ -457,7 +457,7 @@ describe('endpoint unit test', () => {
       };
 
       test('should set a new tag on jquery', (done) => {
-        putPackage(app, '/jquery/verdaccio-tag', jqueryVersion)
+        putPackage(app, '/jquery/merdaccio-tag', jqueryVersion)
           .expect(HTTP_STATUS.CREATED)
           .end(function(err, res) {
             if (err) {
@@ -485,7 +485,7 @@ describe('endpoint unit test', () => {
             }
 
             expect(res.body).toBeDefined();
-            expect(res.body['verdaccio-tag']).toMatch(jqueryVersion);
+            expect(res.body['merdaccio-tag']).toMatch(jqueryVersion);
             done();
           });
       });
@@ -531,7 +531,7 @@ describe('endpoint unit test', () => {
       test('should set a remove a tag on jquery', (done) => {
 
         request(app)
-          .del('/-/package/jquery/dist-tags/verdaccio-tag')
+          .del('/-/package/jquery/dist-tags/merdaccio-tag')
           .set('accept-encoding', HEADERS.JSON)
           .set(HEADER_TYPE.CONTENT_TYPE, HEADERS.JSON)
           //.expect(HEADER_TYPE.CONTENT_TYPE, HEADERS.JSON_CHARSET)

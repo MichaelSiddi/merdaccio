@@ -1,6 +1,6 @@
 web:
   enable: true
-  title: verdaccio-api-spec -1
+  title: merdaccio-api-spec -1
 
 auth:
   auth-memory:

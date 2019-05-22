@@ -7,7 +7,7 @@ import semver from 'semver';
 import _ from 'lodash';
 import { DIST_TAGS } from './constants';
 
-import type { Package } from '@verdaccio/types';
+import type { Package } from '@merdaccio/types';
 
 /**
  * Function gets a local info and an info from uplinks and tries to merge it

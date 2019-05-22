@@ -11,7 +11,7 @@ import { getMatchedPackagesSpec, normalisePackageAccess, sanityCheckUplinksProps
 import { getUserAgent, isObject } from './utils';
 import { APP_ERROR } from './constants';
 
-import type { PackageList, Config as AppConfig, Security, Logger } from '@verdaccio/types';
+import type { PackageList, Config as AppConfig, Security, Logger } from '@merdaccio/types';
 
 import type { MatchedPackage, StartUpConfig } from '../../types';
 

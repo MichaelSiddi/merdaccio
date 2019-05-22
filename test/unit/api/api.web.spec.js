@@ -66,7 +66,7 @@ describe('endpoint web unit test', () => {
     describe('Packages', () => {
       test('should display all packages', (done) => {
         request(app)
-          .get('/-/verdaccio/packages' )
+          .get('/-/merdaccio/packages' )
           .expect(HTTP_STATUS.OK)
           .end(function(err, res) {
             expect(res.body).toHaveLength(1);
@@ -76,7 +76,7 @@ describe('endpoint web unit test', () => {
 
       test.skip('should display scoped readme', (done) => {
         request(app)
-          .get('/-/verdaccio/package/readme/@scope/pk1-test')
+          .get('/-/merdaccio/package/readme/@scope/pk1-test')
           .expect(HTTP_STATUS.OK)
           .expect(HEADER_TYPE.CONTENT_TYPE, HEADERS.TEXT_CHARSET)
           .end(function(err, res) {
@@ -88,7 +88,7 @@ describe('endpoint web unit test', () => {
       //FIXME: disable, we need to inspect why fails randomly
       test.skip('should display scoped readme 404', (done) => {
         request(app)
-          .get('/-/verdaccio/package/readme/@scope/404')
+          .get('/-/merdaccio/package/readme/@scope/404')
           .expect(HTTP_STATUS.OK)
           .expect(HEADER_TYPE.CONTENT_TYPE, HEADERS.TEXT_CHARSET)
           .end(function(err, res) {
@@ -99,7 +99,7 @@ describe('endpoint web unit test', () => {
 
       test('should display sidebar info', (done) => {
         request(app)
-          .get('/-/verdaccio/sidebar/@scope/pk1-test')
+          .get('/-/merdaccio/sidebar/@scope/pk1-test')
           .expect(HTTP_STATUS.OK)
           .expect(HEADER_TYPE.CONTENT_TYPE, HEADERS.JSON_CHARSET)
           .end(function(err, res) {
@@ -116,7 +116,7 @@ describe('endpoint web unit test', () => {
 
       test('should display sidebar info 404', (done) => {
         request(app)
-          .get('/-/verdaccio/sidebar/@scope/404')
+          .get('/-/merdaccio/sidebar/@scope/404')
           .expect(HTTP_STATUS.NOT_FOUND)
           .expect(HEADER_TYPE.CONTENT_TYPE, HEADERS.JSON_CHARSET)
           .end(function() {
@@ -129,7 +129,7 @@ describe('endpoint web unit test', () => {
 
       test('should search pk1-test', (done) => {
         request(app)
-          .get('/-/verdaccio/search/scope')
+          .get('/-/merdaccio/search/scope')
           .expect(HTTP_STATUS.OK)
           .end(function(err, res) {
             expect(res.body).toHaveLength(1);
@@ -139,11 +139,11 @@ describe('endpoint web unit test', () => {
 
       test('should search with 404', (done) => {
         request(app)
-          .get('/-/verdaccio/search/@')
+          .get('/-/merdaccio/search/@')
           .expect(HTTP_STATUS.OK)
           .end(function(err, res) {
             // in a normal world, the output would be 1
-            // https://github.com/verdaccio/verdaccio/issues/345
+            // https://github.com/merdaccio/merdaccio/issues/345
             // should fix this
             expect(res.body).toHaveLength(0);
             done();
@@ -152,7 +152,7 @@ describe('endpoint web unit test', () => {
 
       test('should not find forbidden-place', (done) => {
         request(app)
-          .get('/-/verdaccio/search/forbidden-place')
+          .get('/-/merdaccio/search/forbidden-place')
           .expect(HTTP_STATUS.OK)
           .end(function(err, res) {
             //this is expected since we are not logged
@@ -171,7 +171,7 @@ describe('endpoint web unit test', () => {
       describe('login webui', () => {
         test('should log successfully', (done) => {
           request(app)
-            .post('/-/verdaccio/login')
+            .post('/-/merdaccio/login')
             .send({
               username: credentials.name,
               password: credentials.password
@@ -188,7 +188,7 @@ describe('endpoint web unit test', () => {
 
         test('should fails on log unvalid user', (done) => {
           request(app)
-            .post('/-/verdaccio/login')
+            .post('/-/merdaccio/login')
             .send(JSON.stringify({
               username: 'fake',
               password: 'fake'

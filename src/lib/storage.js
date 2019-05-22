@@ -11,14 +11,14 @@ import ProxyStorage from './up-storage';
 import Search from './search';
 import { API_ERROR, HTTP_STATUS, DIST_TAGS } from './constants';
 import LocalStorage from './local-storage';
-import { ReadTarball } from '@verdaccio/streams';
+import { ReadTarball } from '@merdaccio/streams';
 import { checkPackageLocal, publishPackage, checkPackageRemote, cleanUpLinksRef, mergeUplinkTimeIntoLocal, generatePackageTemplate } from './storage-utils';
 import { setupUpLinks, updateVersionsHiddenUpLink } from './uplink-util';
 import { mergeVersions } from './metadata-utils';
 import { ErrorCode, normalizeDistTags, validateMetadata, isObject } from './utils';
 import type { IStorage, IProxy, IStorageHandler, ProxyList, StringValue, IGetPackageOptions, ISyncUplinks } from '../../types';
-import type { Versions, Package, Config, MergeTags, Version, DistFile, Callback, Logger } from '@verdaccio/types';
-import type { IReadTarball, IUploadTarball } from '@verdaccio/streams';
+import type { Versions, Package, Config, MergeTags, Version, DistFile, Callback, Logger } from '@merdaccio/types';
+import type { IReadTarball, IUploadTarball } from '@merdaccio/streams';
 import { hasProxyTo } from './config-utils';
 import { logger } from '../lib/logger';
 
@@ -526,7 +526,7 @@ class Storage implements IStorageHandler {
 
         // holds a "hidden" value to be used by the package storage.
         // $FlowFixMe
-        version[Symbol.for('__verdaccio_uplink')] = upLink.upname;
+        version[Symbol.for('__merdaccio_uplink')] = upLink.upname;
       }
     }
   }

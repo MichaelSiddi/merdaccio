@@ -69,8 +69,8 @@ describe('Config file', () => {
     test('parse docker.yaml', () => {
       const config = new Config(parseConfigFile(resolveConf('docker')));
       checkDefaultUplink(config);
-      expect(config.storage).toBe('/verdaccio/storage/data');
-      expect(config.auth.htpasswd.file).toBe('/verdaccio/storage/htpasswd');
+      expect(config.storage).toBe('/merdaccio/storage/data');
+      expect(config.auth.htpasswd.file).toBe('/merdaccio/storage/htpasswd');
       checkDefaultConfPackages(config);
     });
 

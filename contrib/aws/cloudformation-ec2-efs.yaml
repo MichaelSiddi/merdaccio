@@ -3,7 +3,7 @@
 # 2. Provide values for all required parameters and any optional parameters desired
 
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Verdaccio - NPM cache / private registry
+Description: merdaccio - NPM cache / private registry
 Parameters:
   # REQUIRED PARAMETERS
   Ami:
@@ -38,19 +38,19 @@ Parameters:
     Type: List<AWS::EC2::Subnet::Id>
     Description: >
       Subnets the load balancer should span.
-  VerdaccioConfigUrl:
+  merdaccioConfigUrl:
     Type: String
-    Description: URL the ASG instances can download Verdaccio's config.yaml from.
+    Description: URL the ASG instances can download merdaccio's config.yaml from.
   # TODO: if you aren't using htpasswd authentication, remove this parameter
   # and the associated user data reference.
-  VerdaccioHtpasswdUrl:
+  merdaccioHtpasswdUrl:
     Type: String
-    Description: URL the ASG instances can download Verdaccio's htpasswd from.
+    Description: URL the ASG instances can download merdaccio's htpasswd from.
 
   # OPTIONAL PARAMETERS
   DockerImage:
     Type: String
-    Default: verdaccio/verdaccio:3
+    Default: merdaccio/merdaccio:3
   AsgMinSize:
     Type: String
     Default: '1'
@@ -150,18 +150,18 @@ Resources:
             start_time=$(date +%s)
 
             IMAGE="${DockerImage}"
-            BASE="/verdaccio"
+            BASE="/merdaccio"
 
             # Mount EFS first
             yum -y install amazon-efs-utils
-            mkdir /verdaccio
+            mkdir /merdaccio
             echo "${Efs}:/ "$BASE" efs tls,_netdev" >> /etc/fstab
             mount -a -t efs defaults
 
             # Create/update the config & password files.
             mkdir "$BASE/conf"
-            curl -o "$BASE/conf/htpasswd" "${VerdaccioHtpasswdUrl}"
-            curl -o "$BASE/conf/config.yaml" "${VerdaccioConfigUrl}"
+            curl -o "$BASE/conf/htpasswd" "${merdaccioHtpasswdUrl}"
+            curl -o "$BASE/conf/config.yaml" "${merdaccioConfigUrl}"
 
             amazon-linux-extras install docker
             systemctl start docker
@@ -176,7 +176,7 @@ Resources:
 
             docker run --detach \
               -p 4873:4873 \
-              --mount "type=bind,src=$BASE,dst=/verdaccio" \
+              --mount "type=bind,src=$BASE,dst=/merdaccio" \
               "$IMAGE"
 
             echo "Finished user-data script in $(( $(date +%s) - start_time)) secs"

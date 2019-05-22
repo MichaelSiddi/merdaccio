@@ -6,7 +6,7 @@
 import { createDecipher, createCipher, createHash, pseudoRandomBytes } from 'crypto';
 import jwt from 'jsonwebtoken';
 
-import type { JWTSignOptions, RemoteUser } from '@verdaccio/types';
+import type { JWTSignOptions, RemoteUser } from '@merdaccio/types';
 
 export const defaultAlgorithm = 'aes192';
 export const defaultTarballHashAlgorithm = 'sha1';

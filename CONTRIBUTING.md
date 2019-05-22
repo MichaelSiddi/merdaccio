@@ -1,10 +1,10 @@
-# Contributing to Verdaccio
+# Contributing to merdaccio
 
 We are happy that you wish to contribute to this project. For that reason, we
 present you with this guide.
 
 Additional information is available on the
-[wiki](https://github.com/verdaccio/verdaccio/wiki).
+[wiki](https://github.com/merdaccio/merdaccio/wiki).
 
 ## Contents
 
@@ -30,17 +30,17 @@ of involvement and technical knowledge required, such as:
 * [Reporting Bugs](#reporting-bugs)
 * [Request Features](#request-features)
 * [Develop Plugins](#develop-plugins)
-* [Improve Documentation](http://www.verdaccio.org/docs/en/installation.html)
+* [Improve Documentation](http://www.merdaccio.org/docs/en/installation.html)
 
 **Please read this document carefully. It will help maintainers and readers
 in solving your issue(s), evaluating your feature request, etc.**
 
 ## Development
 
-Development guides can be found on the [wiki](https://github.com/verdaccio/verdaccio/wiki):
+Development guides can be found on the [wiki](https://github.com/merdaccio/merdaccio/wiki):
 
-* [Building the project](https://github.com/verdaccio/verdaccio/wiki/Build-Source-Code)
-* [Running, debugging, and testing](https://github.com/verdaccio/verdaccio/wiki/Running-and-Debugging-tests)
+* [Building the project](https://github.com/merdaccio/merdaccio/wiki/Build-Source-Code)
+* [Running, debugging, and testing](https://github.com/merdaccio/merdaccio/wiki/Running-and-Debugging-tests)
 
 ## Reporting Bugs
 
@@ -49,10 +49,10 @@ We welcome clear, detailed bug reports.
 **Bugs are considered features that are not working as described in
 documentation.**
 
-If you've found a bug in Verdaccio **that isn't a security risk**, please file 
-a report in our [issue tracker](https://github.com/verdaccio/verdaccio/issues).
+If you've found a bug in merdaccio **that isn't a security risk**, please file 
+a report in our [issue tracker](https://github.com/merdaccio/merdaccio/issues).
 
-**NOTE: Verdaccio still does not support all npm commands. Some were not
+**NOTE: merdaccio still does not support all npm commands. Some were not
 considered important and others have not been requested yet.**
 
 ### Issue Search
@@ -60,18 +60,18 @@ considered important and others have not been requested yet.**
 Search to see if it has already been reported via
 the issue search.
 
-Additionally, we have labelled questions for easy follow-up as [questions](https://github.com/verdaccio/verdaccio/labels/question).
+Additionally, we have labelled questions for easy follow-up as [questions](https://github.com/merdaccio/merdaccio/labels/question).
 
 If so, up-vote it (using GitHub reactions) or add additional helpful details to
 the existing issue to show that it's affecting multiple people.
  
 ### Check Website For Solution
 
-Some of the most popular topics can be found in our website(http://www.verdaccio.org/docs/en/installation.html)
+Some of the most popular topics can be found in our website(http://www.merdaccio.org/docs/en/installation.html)
 
 ### Chat
 
-Questions can be asked via [Discord](http://chat.verdaccio.org/)
+Questions can be asked via [Discord](http://chat.merdaccio.org/)
 
 **Please use the `#questions#` and `#development` channels.**
 
@@ -167,7 +167,7 @@ Use `npm run commitmsg` to check your commit message format.
 
 **Any change in source code must include test updates**.
 
-If you need help with how testing works, please [refer to the following guide](https://github.com/verdaccio/verdaccio/wiki/Running-and-Debugging-tests).
+If you need help with how testing works, please [refer to the following guide](https://github.com/merdaccio/merdaccio/wiki/Running-and-Debugging-tests).
 
 **If you are introducing new features, you MUST include new tests. PRs for
 features without tests will not be merged.**
@@ -188,6 +188,6 @@ If you want to develop your own plugin:
 
 1. Check whether there is a legacy Sinopia plugin for the feature that you need
     via [npmjs](https://www.npmjs.com/search?q=sinopia)
-2. Keep in mind the [life-cycle to load a plugin](https://verdaccio.org/docs/en/dev-plugins)
+2. Keep in mind the [life-cycle to load a plugin](https://merdaccio.org/docs/en/dev-plugins)
 3. You are free to host your plugin in your repository or ours (just ask)
 4. Provide a detailed description of your plugin to help users understand it

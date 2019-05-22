@@ -1,24 +1,24 @@
 {
-  "name": "verdaccio",
+  "name": "merdaccio",
   "version": "4.0.0-beta.10",
   "description": "A lightweight private npm proxy registry",
   "author": {
-    "name": "Verdaccio Maintainers",
-    "email": "verdaccio.npm@gmail.com"
+    "name": "merdaccio Maintainers",
+    "email": "merdaccio.npm@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/verdaccio/verdaccio"
+    "url": "git://github.com/merdaccio/merdaccio"
   },
   "main": "build/index.js",
   "bin": {
-    "verdaccio": "./bin/verdaccio"
+    "merdaccio": "./bin/merdaccio"
   },
   "dependencies": {
-    "@verdaccio/local-storage": "2.1.0",
-    "@verdaccio/streams": "2.0.0",
-    "@verdaccio/readme": "1.0.3",
-    "@verdaccio/ui-theme": "0.1.10",
+    "@merdaccio/local-storage": "2.1.0",
+    "@merdaccio/streams": "2.0.0",
+    "@merdaccio/readme": "1.0.3",
+    "@merdaccio/ui-theme": "0.1.10",
     "JSONStream": "1.3.5",
     "async": "3.0.1-0",
     "body-parser": "1.19.0",
@@ -44,15 +44,15 @@
     "pkginfo": "0.4.1",
     "request": "2.87.0",
     "semver": "6.0.0",
-    "verdaccio-audit": "1.2.0",
-    "verdaccio-htpasswd": "2.0.0"
+    "merdaccio-audit": "1.2.0",
+    "merdaccio-htpasswd": "2.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "7.5.2",
     "@commitlint/config-conventional": "7.5.0",
     "@octokit/rest": "16.25.0",
-    "@verdaccio/babel-preset": "0.1.0",
-    "@verdaccio/types": "5.0.0-beta.4",
+    "@merdaccio/babel-preset": "0.1.0",
+    "@merdaccio/types": "5.0.0-beta.4",
     "codecov": "3.3.0",
     "cross-env": "5.2.0",
     "eslint": "5.16.0",
@@ -64,7 +64,7 @@
     "eslint-plugin-jest": "22.5.1",
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-prettier": "3.0.1",
-    "eslint-plugin-verdaccio": "0.0.5",
+    "eslint-plugin-merdaccio": "0.0.5",
     "flow-bin": "0.81.0",
     "flow-runtime": "0.17.0",
     "get-stdin": "7.0.0",
@@ -78,8 +78,8 @@
     "rimraf": "2.6.3",
     "standard-version": "5.0.2",
     "supertest": "4.0.2",
-    "verdaccio-auth-memory": "0.0.4",
-    "verdaccio-memory": "2.0.0"
+    "merdaccio-auth-memory": "0.0.4",
+    "merdaccio-memory": "2.0.0"
   },
   "keywords": [
     "private",
@@ -90,7 +90,7 @@
     "modules",
     "proxy",
     "server",
-    "verdaccio"
+    "merdaccio"
   ],
   "scripts": {
     "release": "standard-version -a -s",
@@ -110,7 +110,7 @@
     "dev:start": "cross-env BABEL_ENV=registry babel-node src/lib/cli",
     "code:build": "cross-env BABEL_ENV=registry babel src/ --out-dir build/ --copy-files",
     "code:docker-build": "cross-env BABEL_ENV=registry-docker babel src/ --out-dir build/ --copy-files",
-    "build:docker": "docker build -t verdaccio . --no-cache"
+    "build:docker": "docker build -t merdaccio . --no-cache"
   },
   "engines": {
     "node": ">=8",
@@ -147,7 +147,7 @@
   },
   "collective": {
     "type": "opencollective",
-    "url": "https://opencollective.com/verdaccio",
-    "logo": "https://opencollective.com/verdaccio/logo.txt"
+    "url": "https://opencollective.com/merdaccio",
+    "logo": "https://opencollective.com/merdaccio/logo.txt"
   }
 }

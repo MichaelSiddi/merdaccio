@@ -22,7 +22,7 @@ jest.doMock('../../../src/lib/logger', () => logger);
 const options = {
   url: 'http://slack-service',
 };
-const content = 'Verdaccio@x.x.x successfully published';
+const content = 'merdaccio@x.x.x successfully published';
 
 describe('notifyRequest', () => {
   beforeEach(() => {

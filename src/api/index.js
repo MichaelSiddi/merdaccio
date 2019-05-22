@@ -20,7 +20,7 @@ import web from './web';
 
 import type { $Application } from 'express';
 import type { $ResponseExtend, $RequestExtend, $NextFunctionVer, IStorageHandler, IAuth } from '../../types';
-import type { Config as IConfig, IPluginMiddleware } from '@verdaccio/types';
+import type { Config as IConfig, IPluginMiddleware } from '@merdaccio/types';
 import { setup, logger } from '../lib/logger';
 import { log, final, errorReportingMiddleware } from './middleware';
 
@@ -70,7 +70,7 @@ const defineAPI = function(config: IConfig, storage: IStorageHandler) {
   // For WebUI & WebUI API
   if (_.get(config, 'web.enable', true)) {
     app.use('/', web(config, auth, storage));
-    app.use('/-/verdaccio/', webAPI(config, auth, storage));
+    app.use('/-/merdaccio/', webAPI(config, auth, storage));
   } else {
     app.get('/', function(req: $RequestExtend, res: $ResponseExtend, next: $NextFunctionVer) {
       next(ErrorCode.getNotFound(API_ERROR.WEB_DISABLED));

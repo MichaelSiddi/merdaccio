@@ -9,7 +9,7 @@ import AppConfig from '../../../src/lib/config';
 import Storage from '../../../src/lib/storage';
 import {setup} from '../../../src/lib/logger';
 
-import type {Config} from '@verdaccio/types';
+import type {Config} from '@merdaccio/types';
 import type {IStorageHandler} from '../../../types/index';
 import {API_ERROR, HTTP_STATUS} from '../../../src/lib/constants';
 import {mockServer} from './mock';
@@ -75,7 +75,7 @@ describe('StorageTest', () => {
       const storage: IStorageHandler = await generateStorage();
 
       // $FlowFixMe
-      storage._syncUplinksMetadata('@verdaccio/404', null, {}, (err, metadata, errors) => {
+      storage._syncUplinksMetadata('@merdaccio/404', null, {}, (err, metadata, errors) => {
         expect(err).not.toBeNull();
         expect(errors).toBeInstanceOf(Array);
         expect(errors[0][0].statusCode).toBe(HTTP_STATUS.NOT_FOUND);

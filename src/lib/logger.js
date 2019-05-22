@@ -39,7 +39,7 @@ function calculateLevel(x) {
 /**
  * A RotatingFileStream that modifes the message first
  */
-class VerdaccioRotatingFileStream extends Logger.RotatingFileStream {
+class merdaccioRotatingFileStream extends Logger.RotatingFileStream {
   // We depend on mv so that this is there
   write(obj) {
     const msg = fillInMsgTemplate(obj.msg, obj, false);
@@ -73,7 +73,7 @@ function setup(logs) {
         throw new Error('Cluster mode is not supported for rotating-file!');
       }
 
-      const stream = new VerdaccioRotatingFileStream(
+      const stream = new merdaccioRotatingFileStream(
         _.merge(
           {},
           // Defaults can be found here: https://github.com/trentm/node-bunyan#stream-type-rotating-file

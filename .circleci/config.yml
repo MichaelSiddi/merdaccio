@@ -2,7 +2,7 @@ version: 2
 
 aliases:
   - &defaults
-    working_directory: ~/verdaccio
+    working_directory: ~/merdaccio
   - &node8_executor
     docker:
       - image: circleci/node:8
@@ -30,7 +30,7 @@ aliases:
     yarn-sha-{{ checksum "yarn.lock" }}
   - &restore_repo
     attach_workspace:
-      at: ~/verdaccio
+      at: ~/merdaccio
   - &ignore_non_dev_branches
     filters:
       tags:
@@ -53,7 +53,7 @@ jobs:
           key: *yarn_cache_key
       - run:
           name: Install Js dependencies
-          command: yarn install --no-progress --registry https://registry.verdaccio.org
+          command: yarn install --no-progress --registry https://registry.merdaccio.org
       - run:
           name: Prepare CI
           command:  yarn run pre:ci
@@ -67,7 +67,7 @@ jobs:
             - ~/.cache/yarn
             - node_modules
       - persist_to_workspace:
-          root: ~/verdaccio
+          root: ~/merdaccio
           paths:
             - ./*
 

@@ -11,7 +11,7 @@ import { generateGravatarUrl } from '../../../utils/user';
 import logger from '../../../lib/logger';
 import type { Router } from 'express';
 import type { IAuth, $ResponseExtend, $RequestExtend, $NextFunctionVer, IStorageHandler, $SidebarPackage } from '../../../../types';
-import type { Config } from '@verdaccio/types';
+import type { Config } from '@merdaccio/types';
 
 const getOrder = (order = 'asc') => {
   return order === 'asc';

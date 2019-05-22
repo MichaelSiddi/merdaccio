@@ -13,16 +13,16 @@ import type {
   Logger,
   JWTSignOptions,
   PackageAccess,
-  StringValue as verdaccio$StringValue,
-  Package} from '@verdaccio/types';
+  StringValue as merdaccio$StringValue,
+  Package} from '@merdaccio/types';
 import type {
   IReadTarball,
-} from '@verdaccio/streams';
-import type {ILocalData} from '@verdaccio/local-storage';
+} from '@merdaccio/streams';
+import type {ILocalData} from '@merdaccio/local-storage';
 import lunrMutable from 'lunr-mutable-indexes';
 import type {NextFunction, $Request, $Response} from 'request';
 
-export type StringValue = verdaccio$StringValue;
+export type StringValue = merdaccio$StringValue;
 
 export type StartUpConfig = {
   storage: string;
@@ -95,8 +95,8 @@ interface IAuthMiddleware {
 }
 
 export interface IAuth extends IBasicAuth, IAuthMiddleware, IAuthWebUI {
-  config: verdaccio$Config;
-  logger: verdaccio$Logger;
+  config: merdaccio$Config;
+  logger: merdaccio$Logger;
   secret: string;
   plugins: Array<any>;
 }

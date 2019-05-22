@@ -5,7 +5,7 @@
 import Config from '../../../../src/lib/config';
 import LoggerApi from '../../../../src/lib/logger';
 import {generatePackageTemplate} from '../../../../src/lib/storage-utils';
-import { UploadTarball, ReadTarball } from '@verdaccio/streams';
+import { UploadTarball, ReadTarball } from '@merdaccio/streams';
 
 import type {
 	Callback,
@@ -13,14 +13,14 @@ import type {
 	Logger,
 	Package,
 	// PluginOptions
-} from '@verdaccio/types';
+} from '@merdaccio/types';
 
 import type {
 	IPluginStorage,
 	IPackageStorageManager,
 	IPackageStorage
-} from '@verdaccio/local-storage';
-import type { IUploadTarball, IReadTarball } from '@verdaccio/streams';
+} from '@merdaccio/local-storage';
+import type { IUploadTarball, IReadTarball } from '@merdaccio/streams';
 
 class PackageStorage implements IPackageStorageManager {
 	path: string;

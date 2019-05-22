@@ -12,11 +12,11 @@ import { API_ERROR, DIST_TAGS, STORAGE, USERS } from './constants';
 import { createTarballHash } from './crypto-utils';
 import { prepareSearchPackage } from './storage-utils';
 import loadPlugin from '../lib/plugin-loader';
-import LocalDatabase from '@verdaccio/local-storage';
-import { UploadTarball, ReadTarball } from '@verdaccio/streams';
-import type { Package, Config, MergeTags, Version, DistFile, Callback, Logger } from '@verdaccio/types';
-import type { ILocalData, IPackageStorage } from '@verdaccio/local-storage';
-import type { IUploadTarball, IReadTarball } from '@verdaccio/streams';
+import LocalDatabase from '@merdaccio/local-storage';
+import { UploadTarball, ReadTarball } from '@merdaccio/streams';
+import type { Package, Config, MergeTags, Version, DistFile, Callback, Logger } from '@merdaccio/types';
+import type { ILocalData, IPackageStorage } from '@merdaccio/local-storage';
+import type { IUploadTarball, IReadTarball } from '@merdaccio/streams';
 import type { IStorage, StringValue } from '../../types';
 
 /**
@@ -138,7 +138,7 @@ class LocalStorage implements IStorage {
               });
               /* eslint spaced-comment: 0 */
               // $FlowFixMe
-              const upLink: string = version[Symbol.for('__verdaccio_uplink')];
+              const upLink: string = version[Symbol.for('__merdaccio_uplink')];
 
               if (_.isNil(upLink) === false) {
                 this._updateUplinkToRemoteProtocol(hash, upLink);

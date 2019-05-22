@@ -35,8 +35,8 @@ export default function(server, server2, server3) {
     });
 
     describe('should match dist-tags', () => {
-      const matchDisTags = (verdaccioServer, port) => {
-        return verdaccioServer.getPackage(PKG_NAME)
+      const matchDisTags = (merdaccioServer, port) => {
+        return merdaccioServer.getPackage(PKG_NAME)
           .status(HTTP_STATUS.OK)
           .then(function(body) {
             expect(body.name).toBe(PKG_NAME);

@@ -24,8 +24,8 @@
             <g>
                 <path d="M37,0 L63,0 C83.421,0 100,16.579 100,37 L100,63 C100,83.421 83.421,100 63,100 L37,100 C16.579,100 0,83.421 0,63 L0,37 C0,16.579 16.579,0 37,0 Z" id="Shape" fill="#F7F8F6"></path>
                 <g id="Textmarke" transform="translate(28.400000, 77.000000)" fill="#405236" font-family="OpenSansLight-Italic, Open Sans" font-size="10" font-style="italic" font-weight="300">
-                    <text id="Verdaccio">
-                        <tspan x="0.497" y="11.379">Verdaccio</tspan>
+                    <text id="merdaccio">
+                        <tspan x="0.497" y="11.379">merdaccio</tspan>
                     </text>
                 </g>
                 <g id="Bildmarke" transform="translate(22.000000, 26.000000)">

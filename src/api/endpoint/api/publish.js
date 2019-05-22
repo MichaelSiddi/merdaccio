@@ -14,7 +14,7 @@ import { notify } from '../../../lib/notify';
 import star from './star';
 
 import type { Router } from 'express';
-import type { Config, Callback, MergeTags, Version } from '@verdaccio/types';
+import type { Config, Callback, MergeTags, Version } from '@merdaccio/types';
 import type { IAuth, $ResponseExtend, $RequestExtend, $NextFunctionVer, IStorageHandler } from '../../../../types';
 import logger from '../../../lib/logger';
 

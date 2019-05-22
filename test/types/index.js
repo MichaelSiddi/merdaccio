@@ -1,6 +1,6 @@
 // @flow
 
-export interface IVerdaccioConfig {
+export interface ImerdaccioConfig {
   storagePath: string;
   configPath: string;
   domainPath: string;
@@ -18,7 +18,7 @@ export interface IRequestPromise {
 
 export interface IServerProcess {
   bridge: IServerBridge;
-  config: IVerdaccioConfig;
+  config: ImerdaccioConfig;
   childFork: any;
   isDebug: boolean;
   silence: boolean;
@@ -26,7 +26,7 @@ export interface IServerProcess {
   stop(): void;
 }
 
-declare class verdaccio$PromiseAssert<IRequestPromise> extends Promise<any> {
+declare class merdaccio$PromiseAssert<IRequestPromise> extends Promise<any> {
   constructor(options: any): IRequestPromise;
 }
 
@@ -34,7 +34,7 @@ export interface IServerBridge {
   url: string;
   userAgent: string;
   authstr: string;
-  request(options: any): typeof verdaccio$PromiseAssert;
+  request(options: any): typeof merdaccio$PromiseAssert;
   auth(name: string, password: string): IRequestPromise;
   logout(token: string): Promise<any>;
   auth(name: string, password: string): IRequestPromise;

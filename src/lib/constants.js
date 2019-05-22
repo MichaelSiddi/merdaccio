@@ -14,9 +14,9 @@ export const USERS = 'users';
 export const DEFAULT_MIN_LIMIT_PASSWORD: number = 3;
 export const DEFAULT_USER = 'Anonymous';
 
-export const keyPem = 'verdaccio-key.pem';
-export const certPem = 'verdaccio-cert.pem';
-export const csrPem = 'verdaccio-csr.pem';
+export const keyPem = 'merdaccio-key.pem';
+export const certPem = 'merdaccio-cert.pem';
+export const csrPem = 'merdaccio-csr.pem';
 
 export const HEADERS = {
   JSON: 'application/json',
@@ -144,7 +144,7 @@ export const APP_ERROR = {
 export const DEFAULT_NO_README = 'ERROR: No README data found!';
 export const MODULE_NOT_FOUND = 'MODULE_NOT_FOUND';
 
-export const WEB_TITLE = 'Verdaccio';
+export const WEB_TITLE = 'merdaccio';
 
 export const PACKAGE_ACCESS = {
   SCOPE: '@*/*',
@@ -152,7 +152,7 @@ export const PACKAGE_ACCESS = {
 };
 
 export const UPDATE_BANNER = {
-  CHANGELOG_URL: 'https://github.com/verdaccio/verdaccio/releases/tag/',
+  CHANGELOG_URL: 'https://github.com/merdaccio/merdaccio/releases/tag/',
 };
 
 export const STORAGE = {

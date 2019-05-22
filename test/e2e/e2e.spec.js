@@ -5,7 +5,7 @@
 const scopedPackageMetadata = require('./partials/pkg-scoped');
 const protectedPackageMetadata = require('./partials/pkg-protected');
 
-describe('/ (Verdaccio Page)', () => {
+describe('/ (merdaccio Page)', () => {
   let page;
   // this might be increased based on the delays included in all test
   jest.setTimeout(200000);
@@ -150,7 +150,7 @@ describe('/ (Verdaccio Page)', () => {
     const tags = await page.$$('.dep-tag');
     const tag = tags[0];
     const label = await page.evaluate(el => el.innerText, tag);
-    expect(label).toMatch('verdaccio@');
+    expect(label).toMatch('merdaccio@');
   });
 
   test('should display version tab', async () => {
@@ -188,7 +188,7 @@ describe('/ (Verdaccio Page)', () => {
   });
 
   test('should go to 404 page', async () => {
-    await page.goto('http://0.0.0.0:55552/-/web/detail/@verdaccio/not-found');
+    await page.goto('http://0.0.0.0:55552/-/web/detail/@merdaccio/not-found');
     await page.waitFor(500);
     const text = await page.evaluate(() => document.querySelector('.not-found-text').textContent);
     expect(text).toMatch("Sorry, we couldn't find it...");

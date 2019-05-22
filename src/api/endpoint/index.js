@@ -4,7 +4,7 @@
  */
 
 import type { IAuth, IStorageHandler } from '../../../types';
-import type { Config } from '@verdaccio/types';
+import type { Config } from '@merdaccio/types';
 
 import express from 'express';
 import bodyParser from 'body-parser';

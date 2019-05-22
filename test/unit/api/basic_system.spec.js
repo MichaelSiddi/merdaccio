@@ -35,7 +35,7 @@ describe('basic system test', () => {
       url: 'http://localhost:' + port + '/',
     }, function(err, res, body) {
       expect(err).toBeNull();
-      expect(body).toMatch(/Verdaccio/);
+      expect(body).toMatch(/merdaccio/);
       done();
     });
   });

@@ -18,7 +18,7 @@
 .*/tools/.*
 
 [libs]
-node_modules/@verdaccio/types/lib/
+node_modules/@merdaccio/types/lib/
 
 [options]
 suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe

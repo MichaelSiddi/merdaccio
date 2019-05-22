@@ -1,7 +1,7 @@
 /* eslint comma-dangle: 0 */
 
 module.exports = {
-  name: 'verdaccio-unit-jest',
+  name: 'merdaccio-unit-jest',
   verbose: true,
   collectCoverage: true,
   testURL: 'http://localhost',

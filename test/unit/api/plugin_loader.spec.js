@@ -19,7 +19,7 @@ describe('plugin loader', () => {
 
   describe('auth plugins', () => {
     test('testing auth valid plugin loader', () => {
-      const _config = buildConf('verdaccio-plugin');
+      const _config = buildConf('merdaccio-plugin');
       const plugins = loadPlugin(_config, _config.auth, {}, function (plugin) {
         return plugin.authenticate || plugin.allow_access || plugin.allow_publish;
       });
@@ -28,7 +28,7 @@ describe('plugin loader', () => {
     });
 
     test('testing storage valid plugin loader', () => {
-      const _config = buildConf('verdaccio-es6-plugin');
+      const _config = buildConf('merdaccio-es6-plugin');
       const plugins = loadPlugin(_config, _config.auth, {}, function (p) {
         return p.getPackageStorage;
       });

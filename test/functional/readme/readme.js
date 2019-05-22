@@ -19,7 +19,7 @@ export default function (server, server2) {
     describe('should check readme file', () => {
       const matchReadme = (serverRef, pkgName = README_PKG1, readmeMessage = README_MESSAGE) => {
         return serverRef.request({
-          uri: `/-/verdaccio/package/readme/${pkgName}`
+          uri: `/-/merdaccio/package/readme/${pkgName}`
         }).status(HTTP_STATUS.OK).then(function(body) {
 
           expect(body).toEqual(`<p>${readmeMessage}</p>`);

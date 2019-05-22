@@ -9,7 +9,7 @@ import { validateName as utilValidateName, validatePackage as utilValidatePackag
 import { API_ERROR, HEADER_TYPE, HEADERS, HTTP_STATUS, TOKEN_BASIC, TOKEN_BEARER } from '../lib/constants';
 import { stringToMD5 } from '../lib/crypto-utils';
 import type { $ResponseExtend, $RequestExtend, $NextFunctionVer, IAuth } from '../../types';
-import type { Config } from '@verdaccio/types';
+import type { Config } from '@merdaccio/types';
 import { logger } from '../lib/logger';
 
 export function match(regexp: RegExp) {
@@ -139,7 +139,7 @@ export function final(body: any, req: $RequestExtend, res: $ResponseExtend, next
 
       if (typeof body === 'object' && _.isNil(body) === false) {
         if (typeof body.error === 'string') {
-          res._verdaccio_error = body.error;
+          res._merdaccio_error = body.error;
         }
         body = JSON.stringify(body, undefined, '  ') + '\n';
       }
@@ -152,7 +152,7 @@ export function final(body: any, req: $RequestExtend, res: $ResponseExtend, next
       // send(null), send(204), etc.
     }
   } catch (err) {
-    // if verdaccio sends headers first, and then calls res.send()
+    // if merdaccio sends headers first, and then calls res.send()
     // as an error handler, we can't report error properly,
     // and should just close socket
     if (err.message.match(/set headers after they are sent/)) {
@@ -212,7 +212,7 @@ export function log(req: $RequestExtend, res: $ResponseExtend, next: $NextFuncti
     const remoteAddress = req.connection.remoteAddress;
     const remoteIP = forwardedFor ? `${forwardedFor} via ${remoteAddress}` : remoteAddress;
     let message = "@{status}, user: @{user}(@{remoteIP}), req: '@{request.method} @{request.url}'";
-    if (res._verdaccio_error) {
+    if (res._merdaccio_error) {
       message += ', error: @{!error}';
     } else {
       message += ', bytes: @{bytes.in}/@{bytes.out}';
@@ -229,7 +229,7 @@ export function log(req: $RequestExtend, res: $ResponseExtend, next: $NextFuncti
         user: (req.remote_user && req.remote_user.name) || null,
         remoteIP,
         status: res.statusCode,
-        error: res._verdaccio_error,
+        error: res._merdaccio_error,
         bytes: {
           in: bytesin,
           out: bytesout,

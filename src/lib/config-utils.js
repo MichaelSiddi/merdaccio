@@ -9,7 +9,7 @@ import minimatch from 'minimatch';
 
 import { ErrorCode } from './utils';
 
-import type { PackageList, UpLinksConfList } from '@verdaccio/types';
+import type { PackageList, UpLinksConfList } from '@merdaccio/types';
 import type { MatchedPackage } from '../../types';
 
 const BLACKLIST = {

@@ -1,7 +1,7 @@
 <!--
 First of all, please read this section
 
-https://github.com/verdaccio/verdaccio/blob/master/CONTRIBUTING.md#reporting-a-bug
+https://github.com/merdaccio/merdaccio/blob/master/CONTRIBUTING.md#reporting-a-bug
 
 Some advices before file an issue
   * Give a brief explanation of the issue, suggestion or feature to request.
@@ -17,13 +17,13 @@ Some advices before file an issue
 #### Config file:
 #### Additional information:
 
- - `$ NODE_DEBUG=request verdaccio` display request calls (verdaccio <--> uplinks)
- - `$ DEBUG=express:* verdaccio` enable extreme verdaccio debug mode (verdaccio api)
+ - `$ NODE_DEBUG=request merdaccio` display request calls (merdaccio <--> uplinks)
+ - `$ DEBUG=express:* merdaccio` enable extreme merdaccio debug mode (merdaccio api)
  - `$ npm -ddd` prints:
  - `$ npm config get registry` prints:
- - Verdaccio terminal output
- - Which (Windows, OS X/macOS, or Linux) environment are you running verdaccio?:
- - Verdaccio configuration file, eg: `cat ~/.config/verdaccio/config.yaml`
+ - merdaccio terminal output
+ - Which (Windows, OS X/macOS, or Linux) environment are you running merdaccio?:
+ - merdaccio configuration file, eg: `cat ~/.config/merdaccio/config.yaml`
   - Container Options:
    - Docker?:
    - Kubernetes?:

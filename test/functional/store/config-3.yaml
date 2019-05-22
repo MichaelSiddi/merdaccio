@@ -2,7 +2,7 @@ storage: ./test-storage3
 
 web:
   enable: true
-  title: verdaccio-server-3
+  title: merdaccio-server-3
 
 uplinks:
   server1:

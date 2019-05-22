@@ -10,9 +10,9 @@ import request from 'request';
 import Stream from 'stream';
 import URL from 'url';
 import { parseInterval, isObject, ErrorCode, buildToken } from './utils';
-import { ReadTarball } from '@verdaccio/streams';
+import { ReadTarball } from '@merdaccio/streams';
 import { ERROR_CODE, TOKEN_BASIC, TOKEN_BEARER, HEADERS, HTTP_STATUS, API_ERROR, HEADER_TYPE, CHARACTER_ENCODING } from './constants';
-import type { Config, UpLinkConf, Callback, Headers, Logger } from '@verdaccio/types';
+import type { Config, UpLinkConf, Callback, Headers, Logger } from '@merdaccio/types';
 import type { IProxy } from '../../types';
 
 const LoggerApi = require('./logger');
@@ -218,7 +218,7 @@ class ProxyStorage implements IProxy {
 
     let statusCalled = false;
     req.on('response', function(res) {
-      if (!req._verdaccio_aborted && !statusCalled) {
+      if (!req._merdaccio_aborted && !statusCalled) {
         statusCalled = true;
         self._statusCheck(true);
       }
@@ -241,7 +241,7 @@ class ProxyStorage implements IProxy {
       }
     });
     req.on('error', function(_err) {
-      if (!req._verdaccio_aborted && !statusCalled) {
+      if (!req._merdaccio_aborted && !statusCalled) {
         statusCalled = true;
         self._statusCheck(false);
       }
@@ -289,7 +289,7 @@ class ProxyStorage implements IProxy {
 
     // get NPM_TOKEN http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules
     // or get other variable export in env
-    // https://github.com/verdaccio/verdaccio/releases/tag/v2.5.0
+    // https://github.com/merdaccio/merdaccio/releases/tag/v2.5.0
     let token: any;
     const tokenConf: any = auth;
 
@@ -357,7 +357,7 @@ class ProxyStorage implements IProxy {
    url: https://registry.npmjs.org/
    headers:
    Accept: "application/vnd.npm.install-v2+json; q=1.0"
-   verdaccio-staging:
+   merdaccio-staging:
    url: https://mycompany.com/npm
    headers:
    Accept: "application/json"
@@ -559,7 +559,7 @@ class ProxyStorage implements IProxy {
     // always attach Via header to avoid loops, even if we're not proxying
     headers['Via'] = req && req.headers['via'] ? req.headers['via'] + ', ' : '';
 
-    headers['Via'] += '1.1 ' + this.server_id + ' (Verdaccio)';
+    headers['Via'] += '1.1 ' + this.server_id + ' (merdaccio)';
   }
 
   /**

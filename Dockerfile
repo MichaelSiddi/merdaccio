@@ -1,7 +1,7 @@
 FROM node:10.15.3-alpine as builder
 
 ENV NODE_ENV=production \
-    VERDACCIO_BUILD_REGISTRY=https://registry.npmjs.org
+    merdaccio_BUILD_REGISTRY=https://registry.npmjs.org
 
 RUN apk --no-cache add openssl ca-certificates wget && \
     apk --no-cache add g++ gcc libgcc libstdc++ linux-headers make python && \
@@ -9,10 +9,10 @@ RUN apk --no-cache add openssl ca-certificates wget && \
     wget -q https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.25-r0/glibc-2.25-r0.apk && \
     apk add glibc-2.25-r0.apk
 
-WORKDIR /opt/verdaccio-build
+WORKDIR /opt/merdaccio-build
 COPY . .
 
-RUN yarn config set registry $VERDACCIO_BUILD_REGISTRY && \
+RUN yarn config set registry $merdaccio_BUILD_REGISTRY && \
     yarn install --production=false --no-lockfile && \
     yarn lint && \
     yarn code:docker-build && \
@@ -22,37 +22,37 @@ RUN yarn config set registry $VERDACCIO_BUILD_REGISTRY && \
 
 
 FROM node:10.15.3-alpine
-LABEL maintainer="https://github.com/verdaccio/verdaccio"
+LABEL maintainer="https://github.com/merdaccio/merdaccio"
 
-ENV VERDACCIO_APPDIR=/opt/verdaccio \
-    VERDACCIO_USER_NAME=verdaccio \
-    VERDACCIO_USER_UID=10001 \
-    VERDACCIO_PORT=4873 \
-    VERDACCIO_PROTOCOL=http
-ENV PATH=$VERDACCIO_APPDIR/docker-bin:$PATH \
-    HOME=$VERDACCIO_APPDIR
+ENV merdaccio_APPDIR=/opt/merdaccio \
+    merdaccio_USER_NAME=merdaccio \
+    merdaccio_USER_UID=10001 \
+    merdaccio_PORT=4873 \
+    merdaccio_PROTOCOL=http
+ENV PATH=$merdaccio_APPDIR/docker-bin:$PATH \
+    HOME=$merdaccio_APPDIR
 
-WORKDIR $VERDACCIO_APPDIR
+WORKDIR $merdaccio_APPDIR
 
 RUN apk --no-cache add openssl dumb-init
 
-RUN mkdir -p /verdaccio/storage /verdaccio/plugins /verdaccio/conf
+RUN mkdir -p /merdaccio/storage /merdaccio/plugins /merdaccio/conf
 
-COPY --from=builder /opt/verdaccio-build .
+COPY --from=builder /opt/merdaccio-build .
 
-ADD conf/docker.yaml /verdaccio/conf/config.yaml
+ADD conf/docker.yaml /merdaccio/conf/config.yaml
 
-RUN adduser -u $VERDACCIO_USER_UID -S -D -h $VERDACCIO_APPDIR -g "$VERDACCIO_USER_NAME user" -s /sbin/nologin $VERDACCIO_USER_NAME && \
-    chmod -R +x $VERDACCIO_APPDIR/bin $VERDACCIO_APPDIR/docker-bin && \
-    chown -R $VERDACCIO_USER_UID:root /verdaccio/storage && \
-    chmod -R g=u /verdaccio/storage /etc/passwd
+RUN adduser -u $merdaccio_USER_UID -S -D -h $merdaccio_APPDIR -g "$merdaccio_USER_NAME user" -s /sbin/nologin $merdaccio_USER_NAME && \
+    chmod -R +x $merdaccio_APPDIR/bin $merdaccio_APPDIR/docker-bin && \
+    chown -R $merdaccio_USER_UID:root /merdaccio/storage && \
+    chmod -R g=u /merdaccio/storage /etc/passwd
 
-USER $VERDACCIO_USER_UID
+USER $merdaccio_USER_UID
 
-EXPOSE $VERDACCIO_PORT
+EXPOSE $merdaccio_PORT
 
-VOLUME /verdaccio/storage
+VOLUME /merdaccio/storage
 
 ENTRYPOINT ["uid_entrypoint"]
 
-CMD $VERDACCIO_APPDIR/bin/verdaccio --config /verdaccio/conf/config.yaml --listen $VERDACCIO_PROTOCOL://0.0.0.0:$VERDACCIO_PORT
+CMD $merdaccio_APPDIR/bin/merdaccio --config /merdaccio/conf/config.yaml --listen $merdaccio_PROTOCOL://0.0.0.0:$merdaccio_PORT

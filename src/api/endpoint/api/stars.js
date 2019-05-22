@@ -6,7 +6,7 @@
 import { USERS, HTTP_STATUS } from '../../../lib/constants';
 import type { $Response, Router } from 'express';
 import type { $RequestExtend, $NextFunctionVer, IStorageHandler } from '../../../../types';
-import type { Package } from '@verdaccio/types';
+import type { Package } from '@merdaccio/types';
 
 export default function(route: Router, storage: IStorageHandler) {
   route.get(

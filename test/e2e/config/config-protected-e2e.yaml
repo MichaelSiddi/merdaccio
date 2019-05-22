@@ -1,6 +1,6 @@
 web:
   enable: true
-  title: verdaccio-server-protected-e2e
+  title: merdaccio-server-protected-e2e
 
 store:
   memory:

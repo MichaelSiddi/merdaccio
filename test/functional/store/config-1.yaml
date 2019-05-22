@@ -4,7 +4,7 @@ max_users: 2
 
 web:
   enable: true
-  title: verdaccio-server-1
+  title: merdaccio-server-1
 
 auth:
   auth-memory:

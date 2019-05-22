@@ -23,7 +23,7 @@ describe('startServer via API', () => {
   describe('startServer launcher', () => {
     test('should provide all HTTP server data', async (done) => {
       const store = path.join(__dirname, 'partials/store');
-      const serverName = 'verdaccio-test';
+      const serverName = 'merdaccio-test';
       const version = '1.0.0';
       const port = '6000';
 
@@ -44,7 +44,7 @@ describe('startServer via API', () => {
 
     test('should provide all HTTPS server fails', async (done) => {
       const store = path.join(__dirname, 'partials/store');
-      const serverName = 'verdaccio-test';
+      const serverName = 'merdaccio-test';
       const version = '1.0.0';
       const address = 'https://www.domain.com:443';
       const realProcess = process;

@@ -8,7 +8,7 @@ import { allow } from '../../middleware';
 import { convertDistRemoteToLocalTarballUrls, getVersion, ErrorCode } from '../../../lib/utils';
 import { HEADERS, DIST_TAGS, API_ERROR } from '../../../lib/constants';
 import type { Router } from 'express';
-import type { Config } from '@verdaccio/types';
+import type { Config } from '@merdaccio/types';
 import type { IAuth, $ResponseExtend, $RequestExtend, $NextFunctionVer, IStorageHandler } from '../../../../types';
 
 const downloadStream = (packageName: string, filename: string, storage: any, req: $RequestExtend, res: $ResponseExtend) => {

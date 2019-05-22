@@ -4,7 +4,7 @@
  */
 
 import lunrMutable from 'lunr-mutable-indexes';
-import type { Version } from '@verdaccio/types';
+import type { Version } from '@merdaccio/types';
 import type { IStorageHandler, IWebSearch } from '../../types';
 /**
  * Handle the search Indexer.

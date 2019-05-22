@@ -3,7 +3,7 @@
     "babel",
     "flowtype",
     "jest",
-    "verdaccio",
+    "merdaccio",
     "jsx-a11y"
   ],
   "extends": [
@@ -12,7 +12,7 @@
     "plugin:flowtype/recommended",
     "plugin:jest/recommended",
     "plugin:prettier/recommended",
-    "plugin:verdaccio/recommended",
+    "plugin:merdaccio/recommended",
     "plugin:jsx-a11y/recommended"
   ],
   "parser": "babel-eslint",
@@ -51,8 +51,8 @@
     "prefer-rest-params": 1,
     "linebreak-style": 0,
     "quote-props":["error", "as-needed"],
-    "verdaccio/jsx-no-style": ["warn"],
-    "verdaccio/jsx-spread": ["warn"],
+    "merdaccio/jsx-no-style": ["warn"],
+    "merdaccio/jsx-spread": ["warn"],
     "jest/expect-expect": 0
   }
 }

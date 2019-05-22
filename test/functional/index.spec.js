@@ -29,7 +29,7 @@ import pluginsAuth from './plugins/auth';
 import middleware from './plugins/middleware';
 import upLinkCache from './uplinks/cache';
 
-describe('functional test verdaccio', function() {
+describe('functional test merdaccio', function() {
   jest.setTimeout(10000);
   const server1: IServerBridge = global.__SERVERS__[0];
   const server2: IServerBridge = global.__SERVERS__[1];

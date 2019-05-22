@@ -2,7 +2,7 @@ storage: ./storage
 plugins: ./plugins
 
 web:
-  title: Verdaccio
+  title: merdaccio
 
 auth:
   htpasswd:

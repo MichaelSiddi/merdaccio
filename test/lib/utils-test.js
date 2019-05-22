@@ -1,6 +1,6 @@
 // @flow
 
-import type { Version } from "@verdaccio/types";
+import type { Version } from "@merdaccio/types";
 
 export function generateNewVersion(
   pkgName: string,

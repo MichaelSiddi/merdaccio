@@ -1,7 +1,7 @@
 // @flow
-import type {IVerdaccioConfig} from '../types';
+import type {ImerdaccioConfig} from '../types';
 
-export class VerdaccioConfig implements IVerdaccioConfig {
+export class merdaccioConfig implements ImerdaccioConfig {
 
   storagePath: string;
   configPath: string;

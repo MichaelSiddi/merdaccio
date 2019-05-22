@@ -14,7 +14,7 @@ import {generateNewVersion} from '../../lib/utils-test';
 
 const readMetadata = (fileName: string = 'metadata') => readFile(`../../unit/partials/${fileName}`);
 
-import type {Config, MergeTags} from '@verdaccio/types';
+import type {Config, MergeTags} from '@merdaccio/types';
 import type {IStorage} from '../../../types/index';
 import { API_ERROR, HTTP_STATUS, DIST_TAGS} from '../../../src/lib/constants';
 

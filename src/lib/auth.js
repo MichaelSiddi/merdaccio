@@ -23,7 +23,7 @@ import {
 import { convertPayloadToBase64, ErrorCode } from './utils';
 import { getMatchedPackagesSpec } from './config-utils';
 
-import type { Config, Logger, Callback, IPluginAuth, RemoteUser, JWTSignOptions, Security, AuthPluginPackage } from '@verdaccio/types';
+import type { Config, Logger, Callback, IPluginAuth, RemoteUser, JWTSignOptions, Security, AuthPluginPackage } from '@merdaccio/types';
 import type { $Response, NextFunction } from 'express';
 import type { $RequestExtend, IAuth } from '../../types';
 

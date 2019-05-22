@@ -1,11 +1,11 @@
 [Unit]
-Description=Verdaccio lightweight npm proxy registry
+Description=merdaccio lightweight npm proxy registry
 
 [Service]
 Type=simple
 Restart=on-failure
-User=verdaccio
-ExecStart=/usr/bin/verdaccio --config /etc/verdaccio/config.yaml
+User=merdaccio
+ExecStart=/usr/bin/merdaccio --config /etc/merdaccio/config.yaml
 
 [Install]
 WantedBy=multi-user.target

@@ -9,7 +9,7 @@
 import Config from '../../../../src/lib/config';
 import LoggerApi from '../../../../src/lib/logger';
 
-import type { Config as AppConfig, PackageAccess, IPluginAuth, RemoteUser, Logger, PluginOptions } from '@verdaccio/types';
+import type { Config as AppConfig, PackageAccess, IPluginAuth, RemoteUser, Logger, PluginOptions } from '@merdaccio/types';
 
 class ExampleAuthPlugin implements IPluginAuth {
   config: AppConfig;
@@ -20,23 +20,23 @@ class ExampleAuthPlugin implements IPluginAuth {
     this.logger = options.logger;
   }
 
-  adduser(user: string, password: string, cb: verdaccio$Callback): void {
+  adduser(user: string, password: string, cb: merdaccio$Callback): void {
     cb();
   }
 
-  changePassword(username, password, newPassword, cb: verdaccio$Callback): void {
+  changePassword(username, password, newPassword, cb: merdaccio$Callback): void {
     cb();
   }
 
-  authenticate(user: string, password: string, cb: verdaccio$Callback): void {
+  authenticate(user: string, password: string, cb: merdaccio$Callback): void {
     cb();
   }
 
-  allow_access(user: RemoteUser, pkg: PackageAccess, cb: verdaccio$Callback): void {
+  allow_access(user: RemoteUser, pkg: PackageAccess, cb: merdaccio$Callback): void {
     cb();
   }
 
-  allow_publish(user: RemoteUser, pkg: PackageAccess, cb: verdaccio$Callback): void {
+  allow_publish(user: RemoteUser, pkg: PackageAccess, cb: merdaccio$Callback): void {
     cb();
   }
 }
@@ -54,23 +54,23 @@ class ExampleAuthCustomPlugin implements IPluginAuth {
     this.logger = options.logger;
   }
 
-  adduser(user: string, password: string, cb: verdaccio$Callback): void {
+  adduser(user: string, password: string, cb: merdaccio$Callback): void {
     cb();
   }
 
-  changePassword(username, password, newPassword, cb: verdaccio$Callback): void {
+  changePassword(username, password, newPassword, cb: merdaccio$Callback): void {
     cb();
   }
 
-  authenticate(user: string, password: string, cb: verdaccio$Callback): void {
+  authenticate(user: string, password: string, cb: merdaccio$Callback): void {
     cb();
   }
 
-  allow_access(user: RemoteUser, pkg: SubTypePackageAccess, cb: verdaccio$Callback): void {
+  allow_access(user: RemoteUser, pkg: SubTypePackageAccess, cb: merdaccio$Callback): void {
     cb();
   }
 
-  allow_publish(user: RemoteUser, pkg: SubTypePackageAccess, cb: verdaccio$Callback): void {
+  allow_publish(user: RemoteUser, pkg: SubTypePackageAccess, cb: merdaccio$Callback): void {
     cb();
   }
 }

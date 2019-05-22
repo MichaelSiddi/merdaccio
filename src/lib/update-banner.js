@@ -10,7 +10,7 @@ import _ from 'lodash';
 
 import { UPDATE_BANNER, DEFAULT_REGISTRY, HTTP_STATUS } from './constants';
 
-const VERDACCIO_LATEST_REGISTRY_URL = `${DEFAULT_REGISTRY}/verdaccio/latest`;
+const merdaccio_LATEST_REGISTRY_URL = `${DEFAULT_REGISTRY}/merdaccio/latest`;
 
 /**
  * Creates NPM update banner using kleur
@@ -19,8 +19,8 @@ export function createBanner(currentVersion: string, newVersion: string, release
   const changelog = `${UPDATE_BANNER.CHANGELOG_URL}v${newVersion}`;
   const versionUpdate = `${bold().red(currentVersion)} → ${bold().green(newVersion)}`;
   const banner = `
-        ${white().bold('A new ' + _.upperCase(releaseType) + ' version of Verdaccio is available. ' + versionUpdate)}
-        ${white().bold('Run ' + green('npm install -g verdaccio') + ' to update.')}
+        ${white().bold('A new ' + _.upperCase(releaseType) + ' version of merdaccio is available. ' + versionUpdate)}
+        ${white().bold('Run ' + green('npm install -g merdaccio') + ' to update.')}
         ${white().bold('Registry: ' + DEFAULT_REGISTRY)}
         ${blue().bold('Changelog: ' + changelog)}
     `;
@@ -32,20 +32,20 @@ export function createBanner(currentVersion: string, newVersion: string, release
  */
 export function createErrorBanner(message: string): string {
   const banner = `
-        ${red().bold('Unable to check verdaccio version on ' + DEFAULT_REGISTRY)}
+        ${red().bold('Unable to check merdaccio version on ' + DEFAULT_REGISTRY)}
         ${red().bold('Error: ' + message)}
     `;
   return banner;
 }
 
 /**
- * Show verdaccio update banner on start
+ * Show merdaccio update banner on start
  */
-export function verdaccioUpdateBanner(pkgVersion: string) {
-  request(VERDACCIO_LATEST_REGISTRY_URL, function(error: ?Object = null, response: Object = {}) {
+export function merdaccioUpdateBanner(pkgVersion: string) {
+  request(merdaccio_LATEST_REGISTRY_URL, function(error: ?Object = null, response: Object = {}) {
     if (!error && response.statusCode === HTTP_STATUS.OK && response.body) {
       // In case, NPM does not returns version, keeping version equals to
-      // verdaccio version.
+      // merdaccio version.
       const { version = pkgVersion } = JSON.parse(response.body);
       const releaseType = semver.diff(version, pkgVersion);
 

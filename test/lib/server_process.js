@@ -5,18 +5,18 @@ import path from 'path';
 import {fork} from 'child_process';
 import {CREDENTIALS} from '../functional/config.functional';
 import {HTTP_STATUS} from '../../src/lib/constants';
-import type {IVerdaccioConfig, IServerBridge, IServerProcess} from '../types';
+import type {ImerdaccioConfig, IServerBridge, IServerProcess} from '../types';
 
-export default class VerdaccioProcess implements IServerProcess {
+export default class merdaccioProcess implements IServerProcess {
 
   bridge: IServerBridge;
-  config: IVerdaccioConfig;
+  config: ImerdaccioConfig;
   childFork: any;
   isDebug: boolean;
   silence: boolean;
   cleanStore: boolean;
 
-  constructor(config: IVerdaccioConfig,
+  constructor(config: ImerdaccioConfig,
               bridge: IServerBridge,
               silence: boolean = true,
               isDebug: boolean = false,
@@ -28,7 +28,7 @@ export default class VerdaccioProcess implements IServerProcess {
     this.cleanStore = cleanStore;
   }
 
-  init(verdaccioPath: string = '../../bin/verdaccio'): Promise<any> {
+  init(merdaccioPath: string = '../../bin/merdaccio'): Promise<any> {
     return new Promise((resolve, reject) => {
       if(this.cleanStore) {
         rimRaf(this.config.storagePath, (err) => {
@@ -36,16 +36,16 @@ export default class VerdaccioProcess implements IServerProcess {
             reject(err);
           }
 
-          this._start(verdaccioPath, resolve, reject);
+          this._start(merdaccioPath, resolve, reject);
         });
       } else {
-        this._start(verdaccioPath, resolve, reject);
+        this._start(merdaccioPath, resolve, reject);
       }
     });
   }
 
-  _start(verdaccioPath: string, resolve: Function, reject: Function) {
-    const verdaccioRegisterWrap: string = path.join(__dirname, verdaccioPath);
+  _start(merdaccioPath: string, resolve: Function, reject: Function) {
+    const merdaccioRegisterWrap: string = path.join(__dirname, merdaccioPath);
     let childOptions = {
       silent: this.silence
     };
@@ -60,10 +60,10 @@ export default class VerdaccioProcess implements IServerProcess {
 
     const {configPath, port} = this.config;
     // $FlowFixMe
-    this.childFork = fork(verdaccioRegisterWrap, ['-c', configPath, '-l', port], childOptions);
+    this.childFork = fork(merdaccioRegisterWrap, ['-c', configPath, '-l', port], childOptions);
 
     this.childFork.on('message', (msg) => {
-      if ('verdaccio_started' in msg) {
+      if ('merdaccio_started' in msg) {
         this.bridge.debug().status(HTTP_STATUS.OK).then((body) => {
           this.bridge.auth(CREDENTIALS.user, CREDENTIALS.password)
             .status(HTTP_STATUS.CREATED)

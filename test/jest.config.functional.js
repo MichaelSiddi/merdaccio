@@ -1,7 +1,7 @@
 /* eslint comma-dangle: 0 */
 
 module.exports = {
-  name: 'verdaccio-functional-jest',
+  name: 'merdaccio-functional-jest',
   verbose: true,
   globalSetup: './functional/pre-setup.js',
   globalTeardown: './functional/teardown.js',

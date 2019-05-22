@@ -3,7 +3,7 @@
 npm-debug.log
 yarn-error.log
 node_modules
-verdaccio-*.tgz
+merdaccio-*.tgz
 docker-compose.yaml
 Dockerfile
 crowdin.yaml

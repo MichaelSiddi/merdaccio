@@ -2,7 +2,7 @@
 
 Before Pull Request check whether your commits follow this convention
 
-https://github.com/verdaccio/verdaccio/blob/master/CONTRIBUTING.md#git-commit-guidelines
+https://github.com/merdaccio/merdaccio/blob/master/CONTRIBUTING.md#git-commit-guidelines
 
   * If your PR fix an issue don't forget to update the unit test and documentation in /docs folder
   * If your PR delivers a new feature, please, provide examples and why such feature should be considered.

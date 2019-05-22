@@ -1,14 +1,14 @@
 version: '2.1'
 services:
-  verdaccio:
+  merdaccio:
     build: .
-    container_name: verdaccio
+    container_name: merdaccio
     environment:
-      - VERDACCIO_PORT
+      - merdaccio_PORT
     ports:
-      - $VERDACCIO_PORT:$VERDACCIO_PORT
+      - $merdaccio_PORT:$merdaccio_PORT
     volumes:
-      - verdaccio-storage:/verdaccio/storage
+      - merdaccio-storage:/merdaccio/storage
 volumes:
-  verdaccio:
+  merdaccio:
     driver: local

@@ -13,8 +13,8 @@ import type {
 	IStorageManager,
 	RemoteUser,
 	IBasicAuth,
-} from '@verdaccio/types';
-import type { IUploadTarball, IReadTarball } from '@verdaccio/streams';
+} from '@merdaccio/types';
+import type { IUploadTarball, IReadTarball } from '@merdaccio/streams';
 
 export default class ExampleMiddlewarePlugin implements IPluginMiddleware {
 	register_middlewares(app: any, auth: IBasicAuth, storage: IStorageManager): void {

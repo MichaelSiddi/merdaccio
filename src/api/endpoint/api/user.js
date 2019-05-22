@@ -10,7 +10,7 @@ import { ErrorCode } from '../../../lib/utils';
 import { API_ERROR, API_MESSAGE, HTTP_STATUS } from '../../../lib/constants';
 import { createSessionToken, getApiToken, getAuthenticatedMessage, validatePassword } from '../../../lib/auth-utils';
 
-import type { Config } from '@verdaccio/types';
+import type { Config } from '@merdaccio/types';
 import type { $Response, Router } from 'express';
 import type { $RequestExtend, $ResponseExtend, $NextFunctionVer, IAuth } from '../../../../types';
 

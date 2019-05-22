@@ -7,7 +7,7 @@ uplinks:
 
 web:
   enable: true
-  title: verdaccio-server-2
+  title: merdaccio-server-2
 
 middlewares:
   ../fixtures/plugins/middlewares:

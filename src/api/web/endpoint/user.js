@@ -7,7 +7,7 @@ import _ from 'lodash';
 import { API_ERROR, APP_ERROR, HTTP_STATUS } from '../../../lib/constants';
 
 import type { Router } from 'express';
-import type { Config, RemoteUser, JWTSignOptions } from '@verdaccio/types';
+import type { Config, RemoteUser, JWTSignOptions } from '@merdaccio/types';
 import type { IAuth, $ResponseExtend, $RequestExtend, $NextFunctionVer } from '../../../../types';
 import { ErrorCode } from '../../../lib/utils';
 import { getSecurity, validatePassword } from '../../../lib/auth-utils';

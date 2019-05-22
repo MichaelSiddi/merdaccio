@@ -21,15 +21,15 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Docker || Kubernetes (please complete the following information):**
- - Docker verdaccio tag: [e.g. verdaccio:beta]
+ - Docker merdaccio tag: [e.g. merdaccio:beta]
  - Docker commands [e.g. docker pull ...]
  - Docker Version [e.g. v18.05.0-ce-rc1]
 
-**Configuration File (cat ~/.config/verdaccio/config.yaml)** 
+**Configuration File (cat ~/.config/merdaccio/config.yaml)** 
 
 **Debugging output**
- - `$ NODE_DEBUG=request verdaccio` display request calls (verdaccio <--> uplinks)
- - `$ DEBUG=express:* verdaccio` enable extreme verdaccio debug mode (verdaccio api)
+ - `$ NODE_DEBUG=request merdaccio` display request calls (merdaccio <--> uplinks)
+ - `$ DEBUG=express:* merdaccio` enable extreme merdaccio debug mode (merdaccio api)
  - `$ npm -ddd` prints:
  - `$ npm config get registry` prints:
 

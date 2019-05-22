@@ -16,7 +16,7 @@ describe('Publish endpoints - add a tag', () => {
       params: {
         version: '1.0.0',
         tag: 'tag',
-        package: 'verdaccio',
+        package: 'merdaccio',
       },
       body: '',
     };
@@ -73,8 +73,8 @@ describe('Publish endpoints - upload package tarball', () => {
   beforeEach(() => {
     req = {
       params: {
-        filename: 'verdaccio.gzip',
-        package: 'verdaccio',
+        filename: 'merdaccio.gzip',
+        package: 'merdaccio',
       },
       pipe: jest.fn(),
       on: jest.fn(),
@@ -114,8 +114,8 @@ describe('Publish endpoints - delete tarball', () => {
   beforeEach(() => {
     req = {
       params: {
-        filename: 'verdaccio.gzip',
-        package: 'verdaccio',
+        filename: 'merdaccio.gzip',
+        package: 'merdaccio',
         revision: REVISION_MOCK,
       },
     };
@@ -166,7 +166,7 @@ describe('Publish endpoints - un-publish package', () => {
   beforeEach(() => {
     req = {
       params: {
-        package: 'verdaccio',
+        package: 'merdaccio',
       },
     };
     res = { status: jest.fn() };
@@ -214,10 +214,10 @@ describe('Publish endpoints - publish package', () => {
   beforeEach(() => {
     req = {
       body: {
-        name: 'verdaccio',
+        name: 'merdaccio',
       },
       params: {
-        package: 'verdaccio',
+        package: 'merdaccio',
       },
     };
     res = { status: jest.fn() };
@@ -265,16 +265,16 @@ describe('Publish endpoints - publish package', () => {
     };
     req = {
       params: {
-        package: 'verdaccio',
+        package: 'merdaccio',
       },
       body: {
         _rev: REVISION_MOCK,
         users: {
-          verdaccio: true,
+          merdaccio: true,
         },
       },
       remote_user: {
-        name: 'verdaccio',
+        name: 'merdaccio',
       },
     };
     publishPackage(storage)(req, res, next);

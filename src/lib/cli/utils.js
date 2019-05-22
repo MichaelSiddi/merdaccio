@@ -16,7 +16,7 @@ export const resolveConfigPath = function(storageLocation: string, file: string)
 
 /**
  * Retrieve all addresses defined in the config file.
- * Verdaccio is able to listen multiple ports
+ * merdaccio is able to listen multiple ports
  * @param {String} argListen
  * @param {String} configListen
  * eg:

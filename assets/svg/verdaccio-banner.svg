@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="301px" height="100px" viewBox="0 0 301 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
-    <title>verdaccio-banner</title>
+    <title>merdaccio-banner</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="verdaccio-banner" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="verdaccio-logo-Full">
+    <g id="merdaccio-banner" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="merdaccio-logo-Full">
             <rect id="BG" fill="#F7F8F6" fill-rule="nonzero" x="0" y="0" width="301" height="100" rx="37"></rect>
             <g id="Group-2" transform="translate(27.000000, 22.000000)">
                 <g id="Group-2-Copy" transform="translate(81.200000, 0.400000)" fill="#405236" font-family="OpenSansLight-Italic, Open Sans" font-size="42.4" font-style="italic" font-weight="300">
-                    <g id="Verdaccio">
+                    <g id="merdaccio">
                         <text>
-                            <tspan x="0" y="45">Verdaccio</tspan>
+                            <tspan x="0" y="45">merdaccio</tspan>
                         </text>
                     </g>
                 </g>

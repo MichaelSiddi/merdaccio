@@ -55,8 +55,8 @@
 			"cwd": "${workspaceRoot}",
 			"env": {
 				"BABEL_ENV": "testOldEnv",
-				"VERDACCIO_DEBUG": "true",
-				"VERDACCIO_DEBUG_INJECT": "true",
+				"merdaccio_DEBUG": "true",
+				"merdaccio_DEBUG_INJECT": "true",
 				"NODE_DEBUG": "TO_DEBUG_REQUEST_REMOVE_THIS_request"
 			},
 			"preLaunchTask": "pre-test",
@@ -69,9 +69,9 @@
 		{
 			"type": "node",
 			"request": "launch",
-			"name": "Verdaccio Compiled",
+			"name": "merdaccio Compiled",
 			"preLaunchTask": "npm: code:build",
-			"program": "${workspaceRoot}/bin/verdaccio",
+			"program": "${workspaceRoot}/bin/merdaccio",
 			"args": ["-l", "0.0.0.0:4873"],
 			"console": "integratedTerminal"
 		}

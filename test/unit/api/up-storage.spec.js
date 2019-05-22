@@ -6,7 +6,7 @@ import AppConfig from '../../../src/lib/config';
 import configExample from '../partials/config/index';
 import {setup} from '../../../src/lib/logger';
 
-import type {Config, UpLinkConf} from '@verdaccio/types';
+import type {Config, UpLinkConf} from '@merdaccio/types';
 import type {IProxy} from '../../../types/index';
 import {API_ERROR, HTTP_STATUS} from "../../../src/lib/constants";
 import {mockServer} from './mock';
@@ -67,7 +67,7 @@ describe('UpStorge', () => {
     test('should be get remote metadata package does not exist', (done) => {
       const proxy = generateProxy();
 
-      proxy.getRemoteMetadata('@verdaccio/fake-package', {etag: '123456'}, (err) => {
+      proxy.getRemoteMetadata('@merdaccio/fake-package', {etag: '123456'}, (err) => {
         expect(err).not.toBeNull();
         expect(err.statusCode).toBe(HTTP_STATUS.NOT_FOUND);
         expect(err.message).toMatch(API_ERROR.NOT_PACKAGE_UPLINK);
@@ -117,7 +117,7 @@ describe('UpStorge', () => {
 
       test('should be offline uplink', (done) => {
         const proxy = generateProxy();
-        const tarball: string = 'http://404.verdaccioo.com';
+        const tarball: string = 'http://404.merdaccioo.com';
         const stream = proxy.fetchTarball(tarball);
         expect(proxy.failed_requests).toBe(0);
 
@@ -184,7 +184,7 @@ describe('UpStorge', () => {
         expect(validateUpLink('http://my.domain.test:3000')).toBe(true);
       });
 
-      // corner case https://github.com/verdaccio/verdaccio/issues/571
+      // corner case https://github.com/merdaccio/merdaccio/issues/571
       test('should validate tarball path against uplink case#6', () => {
         // same protocol, same domain, port === 443 which is also the standard for https
         expect(validateUpLink('https://my.domain.test',

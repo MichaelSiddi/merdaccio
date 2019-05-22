@@ -14,7 +14,7 @@ import endPointAPI from '../api/index';
 import { getListListenAddresses, resolveConfigPath } from './cli/utils';
 import { API_ERROR, certPem, csrPem, keyPem } from './constants';
 
-import type { Callback } from '@verdaccio/types';
+import type { Callback } from '@merdaccio/types';
 import type { $Application } from 'express';
 
 const logger = require('./logger');
@@ -27,7 +27,7 @@ const logger = require('./logger');
  * @param {String} pkgVersion
  * @param {String} pkgName
  */
-function startVerdaccio(config: any, cliListen: string, configPath: string, pkgVersion: string, pkgName: string, callback: Callback) {
+function startmerdaccio(config: any, cliListen: string, configPath: string, pkgVersion: string, pkgName: string, callback: Callback) {
   if (isObject(config) === false) {
     throw new Error(API_ERROR.CONFIG_BAD_FORMAT);
   }
@@ -126,7 +126,7 @@ function listenDefaultCallback(webServer: $Application, addr: any, pkgName: stri
       // send a message for tests
       if (isFunction(process.send)) {
         process.send({
-          verdaccio_started: true,
+          merdaccio_started: true,
         });
       }
     })
@@ -155,4 +155,4 @@ function listenDefaultCallback(webServer: $Application, addr: any, pkgName: stri
   );
 }
 
-export { startVerdaccio, listenDefaultCallback };
+export { startmerdaccio, listenDefaultCallback };

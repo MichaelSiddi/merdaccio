@@ -4,7 +4,7 @@
  */
 
 import ProxyStorage from './up-storage';
-import type { Versions, Config } from '@verdaccio/types';
+import type { Versions, Config } from '@merdaccio/types';
 import type { IProxy, ProxyList } from '../../types';
 
 /**
@@ -33,7 +33,7 @@ export function updateVersionsHiddenUpLink(versions: Versions, upLink: IProxy) {
 
       // holds a "hidden" value to be used by the package storage.
       // $FlowFixMe
-      version[Symbol.for('__verdaccio_uplink')] = upLink.upname;
+      version[Symbol.for('__merdaccio_uplink')] = upLink.upname;
     }
   }
 }

@@ -6,7 +6,7 @@
 import Path from 'path';
 import _ from 'lodash';
 import logger from './logger';
-import type { Config } from '@verdaccio/types';
+import type { Config } from '@merdaccio/types';
 import { MODULE_NOT_FOUND } from './constants';
 
 /**
@@ -41,15 +41,15 @@ function isES6(plugin) {
  * Load a plugin following the rules
  * - First try to load from the internal directory plugins (which will disappear soon or later).
  * - A second attempt from the external plugin directory
- * - A third attempt from node_modules, in case to have multiple match as for instance verdaccio-ldap
- * and sinopia-ldap. All verdaccio prefix will have preferences.
+ * - A third attempt from node_modules, in case to have multiple match as for instance merdaccio-ldap
+ * and sinopia-ldap. All merdaccio prefix will have preferences.
  * @param {*} config a reference of the configuration settings
  * @param {*} pluginConfigs
  * @param {*} params a set of params to initialize the plugin
  * @param {*} sanityCheck callback that check the shape that should fulfill the plugin
  * @return {Array} list of plugins
  */
-export default function loadPlugin<T>(config: Config, pluginConfigs: any = {}, params: any, sanityCheck: Function, prefix: string = 'verdaccio'): T[] {
+export default function loadPlugin<T>(config: Config, pluginConfigs: any = {}, params: any, sanityCheck: Function, prefix: string = 'merdaccio'): T[] {
   return Object.keys(pluginConfigs).map((pluginId: string) => {
     let plugin;
 
@@ -92,7 +92,7 @@ export default function loadPlugin<T>(config: Config, pluginConfigs: any = {}, p
     }
 
     if (plugin === null) {
-      logger.logger.error({ content: pluginId }, 'plugin not found. try npm install verdaccio-@{content}');
+      logger.logger.error({ content: pluginId }, 'plugin not found. try npm install merdaccio-@{content}');
       throw Error(`
         ${prefix}-${pluginId} plugin not found. try "npm install ${prefix}-${pluginId}"`);
     }

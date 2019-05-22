@@ -108,7 +108,7 @@ describe('Utilities', () => {
       });
 
       describe('getWebProtocol and HAProxy variant', () => {
-        // https://github.com/verdaccio/verdaccio/issues/695
+        // https://github.com/merdaccio/merdaccio/issues/695
 
         test('should handle http', () => {
           expect(getWebProtocol("http,http", 'https')).toBe('http');
@@ -244,7 +244,7 @@ describe('Utilities', () => {
         });
 
         test('good ones', () => {
-          expect(validateName('verdaccio')).toBeTruthy();
+          expect(validateName('merdaccio')).toBeTruthy();
           expect(validateName('some.weird.package-zzz')).toBeTruthy();
           expect(validateName('old-package@0.1.2.tgz')).toBeTruthy();
         });
@@ -357,7 +357,7 @@ describe('Utilities', () => {
 
   describe('User utilities', () => {
     test('should generate gravatar url with email', () => {
-      const gravatarUrl: string = generateGravatarUrl('user@verdaccio.org');
+      const gravatarUrl: string = generateGravatarUrl('user@merdaccio.org');
 
       expect(gravatarUrl).toMatch('https://www.gravatar.com/avatar/');
       expect(gravatarUrl).not.toMatch('000000000');
@@ -445,7 +445,7 @@ describe('Utilities', () => {
 
     test('author field is an object type with author information', () => {
       const packageInfo = {
-        latest: { author: { name: 'verdaccio', email: 'user@verdccio.org' } }
+        latest: { author: { name: 'merdaccio', email: 'user@verdccio.org' } }
       };
       const result = {
         latest: {
@@ -453,7 +453,7 @@ describe('Utilities', () => {
             avatar:
               'https://www.gravatar.com/avatar/794d7f6ef93d0689437de3c3e48fadc7',
             email: 'user@verdccio.org',
-            name: 'verdaccio'
+            name: 'merdaccio'
           }
         }
       };
@@ -590,14 +590,14 @@ describe('Utilities', () => {
 
   describe('formatAuthor', () => {
     test('should check author field different values', () => {
-      const author = 'verdaccioNpm';
+      const author = 'merdaccioNpm';
       expect(formatAuthor(author).name).toEqual(author);
     });
     test('should check author field for object value', () => {
       const user = {
-        name: 'Verdaccion NPM',
-        email: 'verdaccio@verdaccio.org',
-        url: 'https://verdaccio.org'
+        name: 'merdaccion NPM',
+        email: 'merdaccio@merdaccio.org',
+        url: 'https://merdaccio.org'
       };
       expect(formatAuthor(user).url).toEqual(user.url);
       expect(formatAuthor(user).email).toEqual(user.email);

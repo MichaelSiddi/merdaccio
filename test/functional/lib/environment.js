@@ -3,8 +3,8 @@
 import { yellow, green, blue, magenta } from 'kleur';
 import path from 'path';
 import NodeEnvironment from 'jest-environment-node';
-import {VerdaccioConfig} from '../../lib/verdaccio-server';
-import VerdaccioProcess from '../../lib/server_process';
+import {merdaccioConfig} from '../../lib/merdaccio-server';
+import merdaccioProcess from '../../lib/server_process';
 import Server from '../../lib/server';
 import ExpressServer from './simple_server';
 import type {IServerBridge} from '../../types';
@@ -27,9 +27,9 @@ class FunctionalEnvironment extends NodeEnvironment {
 
 
   async setup() {
-    const SILENCE_LOG = !process.env.VERDACCIO_DEBUG;
+    const SILENCE_LOG = !process.env.merdaccio_DEBUG;
     // $FlowFixMe
-    const DEBUG_INJECT: boolean = process.env.VERDACCIO_DEBUG_INJECT ? process.env.VERDACCIO_DEBUG_INJECT : false;
+    const DEBUG_INJECT: boolean = process.env.merdaccio_DEBUG_INJECT ? process.env.merdaccio_DEBUG_INJECT : false;
     const forkList = [];
     const serverList = [];
     const pathStore = path.join(__dirname, '../store');
@@ -50,20 +50,20 @@ class FunctionalEnvironment extends NodeEnvironment {
         storage: '/test-storage3'
       }
     ];
-    console.log(green('Setup Verdaccio Servers'));
+    console.log(green('Setup merdaccio Servers'));
 
     const app = await this.startWeb();
     this.global.__WEB_SERVER__ = app;
 
     for (let config of listServers) {
-      const verdaccioConfig = new VerdaccioConfig(
+      const merdaccioConfig = new merdaccioConfig(
         path.join(pathStore, config.storage),
         path.join(pathStore, config.config),
         `http://${DOMAIN_SERVERS}:${config.port}/`, config.port);
       console.log(magenta(`Running registry ${config.config} on port ${config.port}`));
-      const server: IServerBridge = new Server(verdaccioConfig.domainPath);
+      const server: IServerBridge = new Server(merdaccioConfig.domainPath);
       serverList.push(server);
-      const process = new VerdaccioProcess(verdaccioConfig, server, SILENCE_LOG, DEBUG_INJECT);
+      const process = new merdaccioProcess(merdaccioConfig, server, SILENCE_LOG, DEBUG_INJECT);
 
       const fork = await process.init();
       console.log(blue(`Fork PID ${fork[1]}`));
@@ -81,7 +81,7 @@ class FunctionalEnvironment extends NodeEnvironment {
       throw new Error("There are no servers to stop");
     }
 
-    // shutdown verdaccio
+    // shutdown merdaccio
     for (let server of this.global.__SERVERS_PROCESS__) {
       server[0].stop();
     }

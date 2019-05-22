@@ -11,12 +11,12 @@ import YAML from 'js-yaml';
 import URL from 'url';
 import createError from 'http-errors';
 // $FlowFixMe
-import sanitizyReadme from '@verdaccio/readme';
+import sanitizyReadme from '@merdaccio/readme';
 
 import { HTTP_STATUS, API_ERROR, DEFAULT_PORT, DEFAULT_DOMAIN, DEFAULT_PROTOCOL, CHARACTER_ENCODING, HEADERS, DIST_TAGS, DEFAULT_USER } from './constants';
 import { generateGravatarUrl, GENERIC_AVATAR } from '../utils/user';
 
-import type { Package } from '@verdaccio/types';
+import type { Package } from '@merdaccio/types';
 import type { $Request } from 'express';
 import type { StringValue } from '../../types';
 import { normalizeContributors } from './storage-utils';

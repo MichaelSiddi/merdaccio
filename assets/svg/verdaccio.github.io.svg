@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="960px" height="561px" viewBox="0 0 960 561" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
-    <title>verdaccio.github.io</title>
+    <title>merdaccio.github.io</title>
     <desc>Created with Sketch.</desc>
     <defs>
         <rect id="path-1" x="0" y="0" width="960" height="369"></rect>
@@ -25,7 +25,7 @@
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0906646286 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
     </defs>
-    <g id="verdaccio.github.io" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="merdaccio.github.io" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect fill="#FFFFFF" x="0" y="0" width="960" height="561"></rect>
         <g id="Group-5">
             <mask id="mask-2" fill="white">
@@ -59,7 +59,7 @@
         <text id="Lightweight-private" font-family=".SFNSDisplay, .SF NS Display" font-size="24" font-weight="normal" fill="#405236">
             <tspan x="265" y="478">Lightweight private npm proxy registry</tspan>
         </text>
-        <g id="Verdaccio-Copy-2" transform="translate(380.000000, 114.000000)">
+        <g id="merdaccio-Copy-2" transform="translate(380.000000, 114.000000)">
             <rect id="BG" fill="#FFFFFF" x="0" y="0" width="200" height="200" rx="74"></rect>
             <g id="Group" transform="translate(44.000000, 59.000000)">
                 <g id="Combined-Shape">
@@ -91,8 +91,8 @@
             <path d="M45.5,17.5 L45.5,28.6803399" id="Line" stroke="#FFFFFF" stroke-width="2" opacity="0.546761775" stroke-linecap="square"></path>
         </g>
         <g id="Group-4" transform="translate(393.000000, 392.000000)" fill="#405236" font-family="OpenSansLight-Italic, Open Sans" font-size="42.4" font-style="italic" font-weight="300">
-            <text id="Verdaccio">
-                <tspan x="0.41640625" y="45">Verdaccio</tspan>
+            <text id="merdaccio">
+                <tspan x="0.41640625" y="45">merdaccio</tspan>
             </text>
         </g>
     </g>

@@ -2,7 +2,7 @@ storage: ./mock-store
 
 web:
   enable: false
-  title: verdaccio-server-unit-test
+  title: merdaccio-server-unit-test
 
 auth:
   auth-memory:

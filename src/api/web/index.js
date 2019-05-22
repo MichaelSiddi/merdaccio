@@ -26,7 +26,7 @@ export function loadTheme(config) {
         function(plugin) {
           return _.isString(plugin);
         },
-        'verdaccio-theme'
+        'merdaccio-theme'
       )
     );
   }
@@ -50,7 +50,7 @@ module.exports = function(config, auth, storage) {
 
   router.use(auth.webUIJWTmiddleware());
   router.use(setSecurityWebHeaders);
-  const themePath = loadTheme(config) || require('@verdaccio/ui-theme')();
+  const themePath = loadTheme(config) || require('@merdaccio/ui-theme')();
   const indexTemplate = path.join(themePath, 'index.html');
   const template = fs.readFileSync(indexTemplate).toString();
 
@@ -86,8 +86,8 @@ module.exports = function(config, auth, storage) {
     const options = { uri, protocol, host, url_prefix, base, primaryColor, title, scope };
 
     const webPage = template
-      .replace(/ToReplaceByVerdaccioUI/g, JSON.stringify(options))
-      .replace(/ToReplaceByVerdaccio/g, base)
+      .replace(/ToReplaceBymerdaccioUI/g, JSON.stringify(options))
+      .replace(/ToReplaceBymerdaccio/g, base)
       .replace(/ToReplaceByPrefix/g, url_prefix)
       .replace(/ToReplaceByVersion/g, pkgJSON.version)
       .replace(/ToReplaceByTitle/g, title)

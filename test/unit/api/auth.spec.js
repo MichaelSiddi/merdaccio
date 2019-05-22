@@ -9,7 +9,7 @@ import AppConfig from '../../../src/lib/config';
 import {setup} from '../../../src/lib/logger';
 
 import type {IAuth} from '../../../types/index';
-import type {Config} from '@verdaccio/types';
+import type {Config} from '@merdaccio/types';
 
 setup([]);
 

@@ -1,8 +1,8 @@
-function ValidVerdaccioPlugin() {
+function ValidmerdaccioPlugin() {
 	return {
 		// not valid method
 		authenticate__: function(){}
 	}
 }
 
-module.exports = ValidVerdaccioPlugin;
+module.exports = ValidmerdaccioPlugin;
